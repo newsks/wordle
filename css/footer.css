@@ -1,0 +1,36 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.keyboard-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 70px;
+  background-color: #ecf1f9;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.key-btn {
+  width: 90px;
+  font-size: 18px;
+}
+
+.keyboard-block img {
+  width: 30px;
+}
