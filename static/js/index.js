@@ -1,5 +1,3 @@
-const answer = "CROWN";
-
 let attempts = 0;
 let index = 0;
 let timer;
@@ -31,19 +29,24 @@ function appStart() {
     index = 0;
   };
 
-  const handleEnterKey = () => {
+  const handleEnterKey = async () => {
     let 맞은_갯수 = 0;
+
+    // 서버에서 정답을 받아오는 코드
+    const 응답 = await fetch("answer");
+    const 정답 = await 응답.json();
+
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
         `.board-block[data-index='${attempts}${i}']`
       );
       const inputTxt = block.innerText;
-      const answerTxt = answer[i];
+      const answerTxt = 정답[i];
       if (inputTxt === answerTxt) {
         맞은_갯수 += 1;
         block.style.background = "#6AAA64";
       } // 일치
-      else if (answer.includes(inputTxt))
+      else if (정답.includes(inputTxt))
         block.style.background = "#C9B458"; // 속함
       else block.style.background = "#787C7E"; //그외
       block.style.color = "#fff";
